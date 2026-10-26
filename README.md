@@ -4,6 +4,12 @@ Kassenbon fotografieren, ein paar Felder, fertig. beleg. zeigt dir alle Fristen 
 
 Eine offline Handy-App (PWA) von **gedacht.gemacht.** Keine KI, kein Server, kein Konto.
 
+<p align="center">
+  <img src="bilder/1-uebersicht.png" width="240" alt="">
+  <img src="bilder/2-belege.png" width="240" alt="">
+  <img src="bilder/3-detail.png" width="240" alt="">
+</p>
+
 ## Warum
 
 Der Fernseher geht nach 20 Monaten kaputt. Der Kassenbon ist weg oder auf dem Thermopapier nicht mehr lesbar, und keiner weiß mehr, ob die Gewährleistung noch läuft. beleg. hält den Beleg als Foto fest und rechnet die Fristen für dich aus.
