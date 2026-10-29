@@ -1,71 +1,81 @@
 # beleg.
 
-Kassenbon fotografieren, ein paar Felder, fertig. beleg. zeigt dir alle Fristen für Rückgabe, Gewährleistung und Herstellergarantie, erinnert dich rechtzeitig und hilft bei der Reklamation.
+**Is the TV still under warranty, and where is the receipt?**
 
-Eine offline Handy-App (PWA) von **gedacht.gemacht.** Keine KI, kein Server, kein Konto.
+beleg. is a receipt and warranty tracker for your phone. You photograph the receipt, fill in a few fields, and beleg. shows every deadline for returns, statutory warranty and manufacturer guarantee, reminds you in time and helps you write the complaint. It is an offline PWA based on German consumer law. No AI, no server, no account.
+
+![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue) ![PWA](https://img.shields.io/badge/PWA-installable-5a0fc8) ![Offline](https://img.shields.io/badge/offline-yes-2ea44f) ![No build step](https://img.shields.io/badge/build_step-none-lightgrey)
+
+**Try it:** https://beleg.gedachtgemacht.app (works in any phone browser, install via "Add to Home Screen")
+
+The app interface is in German.
 
 <p align="center">
-  <img src="bilder/1-uebersicht.png" width="240" alt="">
-  <img src="bilder/2-belege.png" width="240" alt="">
-  <img src="bilder/3-detail.png" width="240" alt="">
+  <img src="bilder/1-uebersicht.png" width="240" alt="Overview: total value of purchases still covered, number of receipts, deadlines expiring in the next 60 days">
+  <img src="bilder/2-belege.png" width="240" alt="All receipts: search, filters by category and status, receipts grouped by year with price and protection status">
+  <img src="bilder/3-detail.png" width="240" alt="Receipt detail: photo of the receipt and a timeline for return, reversal of the burden of proof and statutory warranty">
 </p>
 
-## Warum
+## Why
 
-Der Fernseher geht nach 20 Monaten kaputt. Der Kassenbon ist weg oder auf dem Thermopapier nicht mehr lesbar, und keiner weiß mehr, ob die Gewährleistung noch läuft. beleg. hält den Beleg als Foto fest und rechnet die Fristen für dich aus.
+The TV breaks after 20 months. The receipt is gone, or the thermal paper has faded, and nobody knows if the warranty still applies. beleg. keeps the receipt as a photo and works out the deadlines for you.
 
-## Funktionen
+## Features
 
-- **Beleg erfassen:** Bon mit der Kamera fotografieren (mehrere Seiten), aus der Galerie wählen oder eine PDF-Rechnung aus dem Onlineshop anhängen. Fotos werden auf dem Gerät verkleinert.
-- **Kontrast für Thermopapier:** optional Graustufen mit Hintergrundausgleich und Kontrastspreizung, damit blasse Bons lesbar bleiben. Reine Bildrechnung, kein ML.
-- **Felder:** Produkt, Händler, Kaufdatum, Preis, Kategorie, Gewährleistung (24 oder 12 Monate oder keine), Herstellergarantie, Rückgabefrist, Seriennummer, Notiz. Vorschläge aus deinen bisherigen Einträgen.
-- **Fristen:** Rückgabe, Beweislastumkehr, Gewährleistung und Garantie für jeden Beleg, mit Zeitstrahl und Status.
-- **Übersicht:** was in den nächsten 60 Tagen abläuft, wie viele Käufe noch geschützt sind und was sie zusammen wert sind.
-- **Alle Belege:** Suche in Produkt, Händler, Seriennummer und Notiz, Filter nach Kategorie und Status.
-- **Reklamation vorbereiten:** sachliche Mängelanzeige an den Händler mit Bitte um Nacherfüllung nach § 439 BGB und 14 Tagen Frist, mit Hinweis auf die Beweislastumkehr, wenn sie greift. Kopieren, per E-Mail oder teilen.
-- **Bon teilen:** Fotos und PDF über das Teilen-Menü des Handys.
-- **Erinnerungen:** alle kommenden Fristenden als Kalenderdatei (.ics) mit Alarm 14 Tage und 1 Tag vorher um 9 Uhr. Nach Änderungen neu exportieren.
-- **Export:** Liste als CSV für deutsches Excel, Sicherung als JSON inklusive aller Fotos und PDFs, Wiederherstellung auf einem anderen Gerät.
-- **Hell und dunkel**, deutsches Zahlen- und Datumsformat, Beispieldaten zum Ausprobieren.
+- **Capture a receipt:** photograph it with the camera (several pages), pick it from the gallery or attach a PDF invoice from an online shop. Photos are scaled down on the device.
+- **Contrast for thermal paper:** optional grayscale with background correction and contrast stretching, so faded receipts stay readable. Plain image math, no ML.
+- **Fields:** product, shop, purchase date, price, category, statutory warranty (24 or 12 months or none), manufacturer guarantee, return period, serial number, note. Suggestions from your earlier entries.
+- **Deadlines:** return, reversal of the burden of proof, statutory warranty and guarantee for every receipt, with timeline and status.
+- **Overview:** what expires in the next 60 days, how many purchases are still covered and what they are worth together.
+- **All receipts:** search in product, shop, serial number and note, filter by category and status.
+- **Prepare a complaint:** a factual notice of defect to the shop, asking for subsequent performance under § 439 BGB with a 14-day deadline, and a note on the reversal of the burden of proof when it applies. Copy it, send it by email or share it.
+- **Share a receipt:** photos and PDF through the phone's share menu.
+- **Reminders:** all upcoming deadline ends as a calendar file (.ics) with alarms 14 days and 1 day before at 9 am. Export again after changes.
+- **Export:** list as CSV for German Excel, a JSON backup including all photos and PDFs, restore on another device.
+- **Light and dark theme**, German number and date format, sample data to try it out.
 
-## So rechnet beleg.
+## How beleg. calculates
 
-| Frist | Rechnung |
+| Deadline | Calculation |
 |---|---|
-| Rückgabe | Kaufdatum + eingetragene Tage |
-| Beweislastumkehr | Kaufdatum + 12 Monate (Kauf ab 1.1.2022), davor 6 Monate, höchstens bis Ende der Gewährleistung |
-| Gewährleistung | Kaufdatum + Gewährleistungsmonate (gesetzlich 24) |
-| Garantie | Kaufdatum + Garantiemonate |
+| Return | purchase date + the days you entered |
+| Reversal of the burden of proof (Beweislastumkehr) | purchase date + 12 months (purchases from 1 Jan 2022), before that 6 months, at most until the end of the statutory warranty |
+| Statutory warranty (Gewährleistung) | purchase date + warranty months (24 by law) |
+| Guarantee (Garantie) | purchase date + guarantee months |
 
-Monatsrechnung wie im Kalender: der 31.1. plus ein Monat ist der 28.2. (im Schaltjahr der 29.2.). Eine Frist gilt bis einschließlich zum Enddatum. Rechtlich beginnt die Gewährleistung mit der Übergabe, beleg. nimmt das Kaufdatum als Näherung.
+Months are counted like on a calendar: 31 January plus one month is 28 February (29 February in a leap year). A deadline runs up to and including the end date. Legally the statutory warranty starts on delivery; beleg. uses the purchase date as an approximation.
 
-## Datenschutz
+## Privacy
 
-Alles bleibt auf deinem Gerät. beleg. speichert Belege, Fotos und PDFs in der IndexedDB deines Browsers und macht keine Netzwerkzugriffe: keine Analyse, keine Schriften oder Skripte von fremden Servern, keine Konten. Sichere deine Daten regelmäßig über **Mehr · Sicherung exportieren**, denn wenn du die Browserdaten löschst, sind auch die Belege weg. Beim ersten Speichern fragt beleg. den Browser nach dauerhaftem Speicher.
+Everything stays on your device. beleg. stores receipts, photos and PDFs in your browser's IndexedDB and makes no network requests: no analytics, no fonts or scripts from other servers, no accounts. Back up your data regularly via **Mehr · Sicherung exportieren** ("More · Export backup"), because if you clear your browser data, the receipts are gone too. On the first save, beleg. asks the browser for persistent storage.
 
-## Installation
+## Install
 
-1. Den Ordner `beleg/` auf einen beliebigen statischen Webhost legen (zum Beispiel GitHub Pages, Netlify, ein eigener Server). HTTPS ist nötig, damit die App offline funktioniert.
-2. Die Adresse im Handybrowser öffnen.
-3. Im Browsermenü **Zum Startbildschirm hinzufügen** wählen (iPhone: Teilen · Zum Home-Bildschirm).
+1. Put the `beleg/` folder on any static web host (for example GitHub Pages, Netlify, your own server). HTTPS is required for the app to work offline.
+2. Open the address in your phone browser.
+3. In the browser menu choose **Add to Home Screen** (iPhone: Share · Add to Home Screen).
 
-Danach startet beleg. wie eine normale App, auch ohne Internet.
+After that beleg. starts like a normal app, also without internet.
 
-Lokal testen:
+Test locally:
 
 ```sh
 cd beleg
 python3 -m http.server 8000
 ```
 
-Dann `http://localhost:8000` öffnen.
+Then open `http://localhost:8000`.
 
-## Rechtliches
+## Legal
 
-beleg. gibt allgemeine Hinweise zum deutschen Kaufrecht (§§ 438, 439, 477 BGB) und erzeugt eine Textvorlage. Das ist **keine Rechtsberatung**. Prüfe Fristen und Texte im Einzelfall, bei Streit helfen die Verbraucherzentralen. Die Bedingungen einer Herstellergarantie legt der Hersteller fest.
+beleg. gives general information on German sales law (§§ 438, 439, 477 BGB) and generates a text template. This is **not legal advice**. Check deadlines and texts in each case; if there is a dispute, the consumer advice centres (Verbraucherzentralen) can help. The terms of a manufacturer guarantee are set by the manufacturer.
 
-## Lizenz
+## License
 
-GNU Affero General Public License v3.0 (AGPL-3.0), siehe `LICENSE`.
+GNU Affero General Public License v3.0 (AGPL-3.0), see `LICENSE`.
 
-**gedacht.gemacht.** · alles bleibt auf diesem Gerät
+**Deutsch:** beleg. ist eine Kassenbon-App, die Belege offline speichert und Fristen für Gewährleistung, Garantie und Rückgabe berechnet, mit Erinnerung und Vorlage für die Reklamation, ohne Konto, alles bleibt auf dem Handy.
+
+---
+
+**gedacht.gemacht.** Small, honest software. Everything stays on your device. · [More projects](https://github.com/gedachtgemacht)
